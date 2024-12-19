@@ -1,6 +1,6 @@
-import SpecialOffers from "@/components/SpecialOffers";
-import ServicesGrid from "@/components/ServicesGrid";
-import PopularServices from "@/components/PopularServices";
+import SpecialOffers from "../components/SpecialOffers";
+import ServicesGrid from "../components/ServicesGrid";
+import PopularServices from "../components/PopularServices";
 
 export default function Home() {
   return (

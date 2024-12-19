@@ -1,6 +1,7 @@
+"use client";
 import React from "react";
 import { ArrowLeft, Search, Star, Bookmark } from "lucide-react";
-import Button from "@/components/ui/Button"; // Adjust the import path based on your project structure
+import Button from "../../../components/ui/Button";
 
 // Sample data
 const cleaningServices = [
