@@ -55,7 +55,7 @@ export default function CleaningPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 h-14 bg-white border-b">
+      <header className="z-50 flex items-center justify-between px-4 h-14 bg-white border-b">
         <div className="flex items-center gap-4">
           <Button variant="ghost" size="icon" className="rounded-full">
             <ArrowLeft className="h-6 w-6" />

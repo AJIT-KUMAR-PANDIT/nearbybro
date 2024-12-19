@@ -1,7 +1,6 @@
 import SpecialOffers from "@/components/SpecialOffers";
 import ServicesGrid from "@/components/ServicesGrid";
 import PopularServices from "@/components/PopularServices";
-import Image from "next/image";
 
 export default function Home() {
   return (
