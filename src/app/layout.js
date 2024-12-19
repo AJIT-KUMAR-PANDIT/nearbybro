@@ -1,6 +1,9 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import BottomNav from "@/components/BottomNav";
+import Header from "@/components/Header";
+import SearchBar from "@/components/SearchBar";
+import Image from "next/image";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,7 +26,76 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <div className="min-h-screen bg-gradient-to-b from-violet-50 to-white flex flex-col items-center">
+          <div className="w-full max-w-screen-2xl flex flex-col lg:flex-row">
+            {/* Left Advertisement Space (Desktop) */}
+            <div className="hidden lg:block w-48 bg-gray-200 p-4 text-center">
+              <span className="text-gray-700 font-semibold">Advertisement</span>
+            </div>
+
+            {/* Main Container */}
+            <div className="flex-1 bg-white shadow-xl min-h-screen pb-20 lg:pb-0 lg:flex">
+              {/* Sticky Aside (Desktop) */}
+              <aside className="hidden lg:block lg:w-56 lg:border-r lg:p-4 bg-violet-50 sticky top-0 h-screen">
+                <div>
+                  <a
+                    href="#"
+                    className="block py-2 px-4 rounded-lg text-violet-600 hover:bg-violet-100 transition-colors duration-200"
+                  >
+                    <Image
+                      src="/nearByBroLight.png"
+                      alt="nearByBro Logo"
+                      width={200}
+                      height={50}
+                    />
+                  </a>
+                </div>
+                <h2 className="text-2xl font-bold mb-6 text-violet-800">
+                  Menu
+                </h2>
+                <nav>
+                  <ul className="space-y-2">
+                    {["Home", "Bookings", "Calendar", "Inbox", "Profile"].map(
+                      (item) => (
+                        <li key={item}>
+                          <a
+                            href="#"
+                            className="block py-2 px-4 rounded-lg text-violet-600 hover:bg-violet-100 transition-colors duration-200"
+                          >
+                            {item}
+                          </a>
+                        </li>
+                      )
+                    )}
+                  </ul>
+                </nav>
+              </aside>
+
+              {/* Main Content */}
+              <main className="flex-1">
+                {/* Fixed Header */}
+                <div className="sticky top-0 bg-white z-10 shadow-md">
+                  <Header />
+                </div>
+                <div className="px-4 md:px-6 lg:px-8 space-y-6 py-4">
+                  <SearchBar />
+
+                  {children}
+                </div>
+              </main>
+            </div>
+
+            {/* Right Advertisement Space (Desktop) */}
+            <div className="hidden lg:block w-48 bg-gray-200 p-4 text-center">
+              <span className="text-gray-700 font-semibold">Advertisement</span>
+            </div>
+          </div>
+
+          {/* Bottom Advertisement (All Devices) */}
+          <div className="w-full bg-gray-200 p-6 text-center mt-4">
+            <span className="text-gray-700 font-semibold">Advertisement</span>
+          </div>
+        </div>
         <BottomNav />
       </body>
     </html>
