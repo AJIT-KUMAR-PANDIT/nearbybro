@@ -5,18 +5,31 @@ import loaderGif from "../assets/loader.gif";
 export default function Header() {
   return (
     <header className="p-4 flex items-center justify-between md:p-6 lg:p-8 bg-white shadow-sm">
-      <div className="flex items-center gap-4">
-        <div className="w-12 h-12 rounded-full overflow-hidden ring-2 ring-violet-300 relative">
-          <Image
-            src={loaderGif}
-            alt="Profile"
-            layout="fill"
-            objectFit="cover"
-          />
-        </div>
-        <div>
-          <p className="text-violet-500 text-sm font-medium">Good Morning 👋</p>
-          <h1 className="font-bold text-lg text-violet-900">Andrew Ainsley</h1>
+      <Image
+        src="/logo4light.png"
+        alt="Profile"
+        width={200}
+        height={50}
+        className="lg:hidden"
+      />
+      <div className="hidden lg:block">
+        <div className="flex items-center gap-4">
+          <div className="w-12 h-12 rounded-full overflow-hidden ring-2 ring-violet-300 relative">
+            <Image
+              src={loaderGif}
+              alt="Profile"
+              layout="fill"
+              objectFit="cover"
+            />
+          </div>
+          <div>
+            <p className="text-violet-500 text-sm font-medium">
+              Good Morning 👋
+            </p>
+            <h1 className="font-bold text-lg text-violet-900">
+              Nearby Indians
+            </h1>
+          </div>
         </div>
       </div>
       <div className="flex gap-3">
