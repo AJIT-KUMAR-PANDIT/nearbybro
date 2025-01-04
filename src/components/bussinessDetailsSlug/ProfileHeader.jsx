@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { BookmarkIcon, MapPinIcon, StarIcon } from "lucide-react";
+import HeroImageSliderCategoryDetails from "../ImageSlider/HeroImageSliderCategoryDetails/HeroImageSliderCategoryDetails";
 
 export default function ProfileHeader() {
   const [isBookmarked, setIsBookmarked] = useState(false);
@@ -44,6 +45,9 @@ export default function ProfileHeader() {
         <div className="mt-4 flex items-baseline">
           <span className="text-4xl font-bold">$20</span>
           <span className="ml-2 opacity-80">(Floor price)</span>
+        </div>
+        <div>
+          <HeroImageSliderCategoryDetails />
         </div>
       </div>
     </motion.header>

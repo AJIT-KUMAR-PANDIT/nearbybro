@@ -12,6 +12,15 @@ export default {
         foreground: "var(--foreground)",
       },
     },
+    animation: {
+      "rotate-icon": "rotateIcon 1.5s infinite linear",
+    },
+    keyframes: {
+      rotateIcon: {
+        "0%": { transform: "rotate(0deg)" },
+        "100%": { transform: "rotate(360deg)" },
+      },
+    },
   },
   plugins: [],
 };

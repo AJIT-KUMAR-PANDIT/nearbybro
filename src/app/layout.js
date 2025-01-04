@@ -4,6 +4,12 @@ import BottomNav from "../components/BottomNav";
 import Header from "../components/Header";
 import SearchBar from "../components/SearchBar";
 import Image from "next/image";
+import { Button2 } from "../components/ui/Button2";
+import whatsappIcon from "../assets/tab_icon/whatsapp.png";
+import callIcon from "../assets/tab_icon/call.png";
+import locationIcon from "../assets/tab_icon/location.png";
+import streetviewIcon from "../assets/tab_icon/streetview.png";
+import RotateToPortrait from "../components/utils/RotateToPortrait";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,13 +32,13 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <RotateToPortrait />
         <div className="min-h-screen bg-gradient-to-b from-violet-50 to-white flex flex-col items-center">
           <div className="w-full max-w-screen-2xl flex flex-col lg:flex-row">
-            {/* Left Advertisement Space (Desktop)
+            {/* Left Advertisement Space (Desktop) */}
             <div className="hidden lg:block w-48 bg-gray-200 p-4 text-center">
               <span className="text-gray-700 font-semibold">Advertisement</span>
-            </div> */}
-
+            </div>
             {/* Main Container */}
             <div className="flex-1 bg-white shadow-xl min-h-screen pb-20 lg:pb-0 lg:flex">
               {/* Sticky Aside (Desktop) */}
@@ -84,11 +90,58 @@ export default function RootLayout({ children }) {
                 </div>
               </main>
             </div>
-
-            {/* Right Advertisement Space (Desktop)
+            {/* Right Advertisement Space (Desktop) */}
             <div className="hidden lg:block w-48 bg-gray-200 p-4 text-center">
-              <span className="text-gray-700 font-semibold">Advertisement</span>
-            </div> */}
+              <div className="overflow-Y-scroll fixed  right-0 p-4 gap-4 max-w-2xl mx-auto ">
+                <Button2
+                  variant="outline"
+                  className="min-w-8 flex items-center justify-center gap-2 bg-white"
+                >
+                  {/* <MessageCircleIcon className="w-4 h-4" />
+          Whatsapp */}
+                  <Image
+                    src={whatsappIcon}
+                    alt="whatsapp"
+                    width={100}
+                    height={100}
+                  />
+                </Button2>
+                <Button2
+                  variant="outline"
+                  className="min-w-8 flex items-center justify-center gap-2 bg-white"
+                >
+                  {/* <CalendarIcon className="w-4 h-4" />
+          Call Now */}
+                  <Image src={callIcon} alt="call" width={100} height={100} />
+                </Button2>
+                <Button2
+                  variant="outline"
+                  className="min-w-8 flex items-center justify-center gap-2 bg-white"
+                >
+                  {/* <CalendarIcon className="w-4 h-4" />
+          Location */}
+                  <Image
+                    src={locationIcon}
+                    alt="location"
+                    width={100}
+                    height={100}
+                  />
+                </Button2>
+                <Button2
+                  variant="outline"
+                  className="min-w-8 flex items-center justify-center gap-2 bg-white"
+                >
+                  {/* <CalendarIcon className="w-4 h-4" />
+          Street View */}
+                  <Image
+                    src={streetviewIcon}
+                    alt="location"
+                    width={100}
+                    height={100}
+                  />
+                </Button2>
+              </div>
+            </div>
           </div>
 
           {/* Bottom Advertisement (All Devices)

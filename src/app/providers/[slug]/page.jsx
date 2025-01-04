@@ -14,6 +14,14 @@ import { Button2 } from "../../../components/ui/Button2"; // Import the new Butt
 import Gallery from "../../../components/bussinessDetailsSlug/Gallery";
 import Reviews from "../../../components/bussinessDetailsSlug/Reviews";
 import ProfileHeader from "../../../components/bussinessDetailsSlug/ProfileHeader";
+import CustomMap from "../../../components/map/CustomMap";
+import whatsappIcon from "../../../assets/tab_icon/whatsapp.png";
+import callIcon from "../../../assets/tab_icon/call.png";
+import locationIcon from "../../../assets/tab_icon/location.png";
+import streetviewIcon from "../../../assets/tab_icon/streetview.png";
+
+const embedUrl =
+  "https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d14712.546724122365!2d86.18084090274206!3d22.7973987693127!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1stcs%20jamshedpur!5e0!3m2!1sen!2sin!4v1735994804150!5m2!1sen!2sin"; // Provided Google Maps Embed URL
 
 export default function CleaningServiceProfile() {
   const [isBookmarked, setIsBookmarked] = useState(false);
@@ -36,6 +44,11 @@ export default function CleaningServiceProfile() {
               Read more...
             </button>
           </p>
+        </section>
+
+        <section>
+          {" "}
+          <CustomMap mapUrl={embedUrl} />
         </section>
 
         <section aria-labelledby="gallery-section">
@@ -64,17 +77,38 @@ export default function CleaningServiceProfile() {
         </section>
       </main>
 
-      <footer className="fixed bottom-16 left-0 right-0 p-4  bg-white border-t flex gap-4 max-w-2xl mx-auto  lg:bottom-0">
+      <footer className="lg:hidden w-[100vw] overflow-x-scroll fixed bottom-16 left-0 right-0 p-4 flex gap-4 max-w-2xl mx-auto  lg:bottom-0">
         <Button2
           variant="outline"
-          className="w-1/2 flex items-center justify-center gap-2"
+          className="min-w-8 flex items-center justify-center gap-2 bg-white"
         >
-          <MessageCircleIcon className="w-4 h-4" />
-          Message
+          {/* <MessageCircleIcon className="w-4 h-4" />
+          Whatsapp */}
+          <Image src={whatsappIcon} alt="whatsapp" width={100} height={100} />
         </Button2>
-        <Button2 className="w-1/2 bg-purple-600 hover:bg-purple-700 flex items-center justify-center gap-2">
-          <CalendarIcon className="w-4 h-4" />
-          Book Now
+        <Button2
+          variant="outline"
+          className="min-w-8 flex items-center justify-center gap-2 bg-white"
+        >
+          {/* <CalendarIcon className="w-4 h-4" />
+          Call Now */}
+          <Image src={callIcon} alt="call" width={100} height={100} />
+        </Button2>
+        <Button2
+          variant="outline"
+          className="min-w-8 flex items-center justify-center gap-2 bg-white"
+        >
+          {/* <CalendarIcon className="w-4 h-4" />
+          Location */}
+          <Image src={locationIcon} alt="location" width={100} height={100} />
+        </Button2>
+        <Button2
+          variant="outline"
+          className="min-w-8 flex items-center justify-center gap-2 bg-white"
+        >
+          {/* <CalendarIcon className="w-4 h-4" />
+          Street View */}
+          <Image src={streetviewIcon} alt="location" width={100} height={100} />
         </Button2>
       </footer>
     </div>
