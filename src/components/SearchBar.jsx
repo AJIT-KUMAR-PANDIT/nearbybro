@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function SearchBar() {
   return (
     <>
-      <div className="lg:hidden flex justify-center w-[93vw]">
+      {/* <div className="lg:hidden flex justify-center w-[93vw]">
         <div className="flex items-center gap-4">
           <div className=" w-12 h-12 rounded-full overflow-hidden ring-2 ring-violet-300 relative">
             <Image
@@ -24,7 +24,7 @@ export default function SearchBar() {
             </h1>
           </div>
         </div>
-      </div>
+      </div> */}
       <div className="mb-8">
         <div className="relative">
           <Search className="w-5 h-5 absolute left-4 top-1/2 transform -translate-y-1/2 text-violet-400" />

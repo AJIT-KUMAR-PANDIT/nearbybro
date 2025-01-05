@@ -2,7 +2,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import BottomNav from "../components/BottomNav";
 import Header from "../components/Header";
-import SearchBar from "../components/SearchBar";
 import Image from "next/image";
 import { Button2 } from "../components/ui/Button2";
 import whatsappIcon from "../assets/tab_icon/whatsapp.png";
@@ -84,14 +83,13 @@ export default function RootLayout({ children }) {
                   <Header />
                 </div>
                 <div className="px-4 md:px-6 lg:px-8 space-y-6 py-4">
-                  <SearchBar />
-
                   {children}
                 </div>
               </main>
             </div>
             {/* Right Advertisement Space (Desktop) */}
             <div className="hidden lg:block w-48 bg-gray-200 p-4 text-center">
+              <h2 className="text-lg font-bold mb-4">Links</h2>
               <div className="overflow-Y-scroll fixed  right-0 p-4 gap-4 max-w-2xl mx-auto ">
                 <Button2
                   variant="outline"
