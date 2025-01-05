@@ -3,11 +3,13 @@
 import React, { useState, useEffect } from "react";
 
 const RotateToPortrait = () => {
-  const [isLandscape, setIsLandscape] = useState(false);
+  const [isLandscapeMobile, setIsLandscapeMobile] = useState(false);
 
   useEffect(() => {
     const checkOrientation = () => {
-      setIsLandscape(window.innerWidth > window.innerHeight);
+      const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+      const isLandscape = window.innerWidth > window.innerHeight;
+      setIsLandscapeMobile(isMobile && isLandscape);
     };
 
     checkOrientation();
@@ -18,12 +20,12 @@ const RotateToPortrait = () => {
     };
   }, []);
 
-  if (!isLandscape) return null; // Show nothing if not in landscape mode
+  if (!isLandscapeMobile) return null; // Show nothing if not in mobile landscape mode
 
   return (
     <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black text-white">
       <svg
-        className="animate-rotate-icon w-24 h-24 mb-4"
+        className="animate-spin w-24 h-24 mb-4"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
         fill="none"
